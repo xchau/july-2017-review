@@ -5,8 +5,8 @@
 
   const SplashPage = {
     view() {
-      return m('a', {
-        href: '#!/hello'
+      return m('a[href=/hello]', {
+        oncreate: m.route.link
       }, 'Enter');
     }
   }
@@ -29,16 +29,20 @@
   const HelloWorld = {
     view() {
       return m('main', [
-           m('h1.fancy.coral', count + ' clicks'),
-           m('button', {
-             onclick: increment
-           }, '+1'),
+         m('h1.fancy.coral', count + ' clicks'),
+         m('button', {
+           onclick: increment
+         }, '+1'),
        ]);
     }
   };
 
-  m.route(root, '/splash', {
-    '/splash': SplashPage,
+  // const path = m.route.get();
+  // console.log(path);
+
+  m.route(root, '/', {
+    '/': SplashPage,
     '/hello': HelloWorld
-  });
+  })
+  .prefix(m.route.get());
 })();
