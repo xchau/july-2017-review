@@ -6,7 +6,6 @@ module.exports = {
   subscribe(eventName, eventFn) {
     this.events[eventName] = this.events[eventName] || [];
     this.events[eventName].push(eventFn);
-    console.log(this.events);
   },
 
   unsubscribe(eventName, eventFn) {

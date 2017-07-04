@@ -28,7 +28,7 @@ pubsub.subscribe('fillGreen', (color) => {
 });
 
 module.exports = {
-  view(vnode) {
+  view() {
     return m('div.moduleBox', [
       m('div.buttonRow', [
         m('button.button.butA', {
