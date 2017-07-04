@@ -5,7 +5,6 @@ const pubsub = require('../pubsub/pubsub');
 const data = require('../../data/data');
 
 pubsub.subscribe('/add/person', (obj) => {
-  console.log(obj);
   const tbody = document.getElementById('tbody');
   const tr = document.createElement('tr');
   const tdName = document.createElement('td');
